@@ -3,5 +3,8 @@
 
     <string name="hello">Hello World, HatfieldHallActivity!</string>
     <string name="app_name">HatfieldHall</string>
+    <string name="Home">Home</string>
+    <string name="Seat">Find Seat</string>
+    <string name="Venue">Venue</string>
 
 </resources>
