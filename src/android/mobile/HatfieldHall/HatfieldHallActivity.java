@@ -13,8 +13,7 @@ public class HatfieldHallActivity extends TabActivity{
 		@Override
 		public void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
-			setContentView(R.layout.main);
-
+			setContentView(R.layout.main);			
 			TabHost tabHost = getTabHost();
 
 			// Tab for Home
