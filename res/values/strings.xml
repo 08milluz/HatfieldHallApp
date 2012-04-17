@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <String name="hello">Hello World, HatfieldHallActivity!</String>
     <string name="app_name">HatfieldHall</string>
     <string name="Home">Home</string>
     <string name="Seat">Find Seat</string>

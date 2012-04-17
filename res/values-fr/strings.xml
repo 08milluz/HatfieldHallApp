@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
-</resources>
+	<string name="app_name">Hatfield salle</string>
+     <string name="Home">Accueil</string>
+     <string name="Seat">Trouver Seat</string>
+     <string name="Venue">Lieu</string>
+</resources> 
