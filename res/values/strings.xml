@@ -2,8 +2,8 @@
 <resources>
 
     <string name="app_name">HatfieldHall</string>
-    <string name="Home">Home</string>
-    <string name="Seat">Find Seat</string>
-    <string name="Venue">Venue</string>
+    <string name="find_seat">Find Seat</string>
+    <string name="home">Home</string>
+    <string name="venue">Venue</string>
 
 </resources>
