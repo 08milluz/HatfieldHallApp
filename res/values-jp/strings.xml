@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">ハットフィールドホール</string>
-    <string name="Home">ホーム</string>
-    <string name="Seat">はシート</string>
-    <string name="Venue">会場</string>
+    <string name="home">ホーム</string>
+    <string name="find_seat">はシート</string>
+    <string name="venue">会場</string>
 </resources>
