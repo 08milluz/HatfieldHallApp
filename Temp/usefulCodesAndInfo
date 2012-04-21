@@ -1,5 +1,0 @@
-helpful codes
-
-1-
-You can look up the locale using the Context object that Android makes available:
-String locale = context.getResources().getConfiguration().locale.getDisplayName();
