@@ -1,0 +1,14 @@
+package testing.HatfieldHall;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import static android.mobile.HatfieldHall.SeatActivity
+public class TestSeatActivity {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

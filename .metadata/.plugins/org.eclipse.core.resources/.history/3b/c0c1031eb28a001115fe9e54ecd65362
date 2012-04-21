@@ -1,0 +1,22 @@
+package android.mobile.HatfieldHall;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.Spinner;
+
+public class SeatActivity extends Activity {
+	private Spinner rowSelector;
+	private ArrayList<Character> rows= new ArrayList<Character>(); 
+	
+	
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.seat);
+		
+		rowSelector = (Spinner) findViewById(R.id.textView1);
+		
+	}
+
+}

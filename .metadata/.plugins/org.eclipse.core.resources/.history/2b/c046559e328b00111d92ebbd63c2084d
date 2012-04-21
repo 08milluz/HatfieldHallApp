@@ -1,0 +1,89 @@
+package android.mobile.HatfieldHall.test;
+
+import java.util.Locale;
+
+import android.app.Activity;
+import android.content.res.Configuration;
+import android.mobile.HatfieldHall.SeatActivity;
+import android.test.ActivityInstrumentationTestCase2;
+import android.widget.TextView;
+
+
+@SuppressWarnings("rawtypes")
+public class SeatActivityTest extends ActivityInstrumentationTestCase2 {
+	
+	private Activity mActivity;		// SeatActivity is under test
+	private TextView mView;				// SeatActivity's TextView
+	private String resourceString;
+	private Locale loc;
+	@SuppressWarnings("unchecked")
+	public SeatActivityTest() {
+		super("android.mobile.HatfieldHall",SeatActivity.class);
+		
+	}
+	
+	
+	protected void setUp() throws Exception{
+		super.setUp();
+		mActivity = this.getActivity();
+		Locale locale2 = new Locale("fr"); 
+	    Locale.setDefault(locale2);
+	    Configuration config2 = new Configuration();
+	    config2.locale = locale2;
+	    mActivity.getBaseContext().getResources().updateConfiguration(config2, mActivity.getBaseContext().getResources().getDisplayMetrics());
+	     // loading data ...
+	     super.refresh();
+	     // refresh the tabs and their content
+	        
+
+		mView = (TextView) mActivity.findViewById(android.mobile.HatfieldHall.R.id.textView1);
+		resourceString = mActivity.getString(android.mobile.HatfieldHall.R.string.find_seat);
+	}
+	
+	public void testPreconditions() {
+	      assertNotNull(mView);
+	    }
+	
+	public void testLocaleIsRecognized(){
+		
+	}
+	
+	
+	public void testLocaleText(){
+		assertEquals(, (String)mView.getText());
+	}
+	
+	
+	
+	public void testCorrectActivityIsReferenced(){
+		
+	}
+
+	public void testRowSpinnerIsCreated(){
+		
+	}
+
+	public void testSeatNumberSpinnerIsCreated(){
+		
+	}
+
+	public void testRowSpinnerKeysGetCorrectValues(){
+		
+	}
+
+	public void testSeatNumberSpinnerKeysGetCorrectValues(){
+		
+	}
+
+	public void testFloorMapLoads(){
+		
+	}
+	
+	public void testHotSpotsLayerOverImage(){
+		
+	}
+	
+	public void testHotSpotsHighLightWithRespectToAppropriateRowAndColumn(){
+		
+	}
+}
