@@ -16,14 +16,6 @@ public class HatfieldHallActivity extends TabActivity{
 			setContentView(R.layout.main);			
 			TabHost tabHost = getTabHost();
 			
-//			// Tab for Home
-//			TabSpec homeSpec = tabHost.newTabSpec(R.string.Home);
-//			// setting Title and Icon for the Tab
-//			homeSpec.setIndicator(R.string.Home,
-//					getResources().getDrawable(R.drawable.icon_home_tab));
-//			Intent homeIntent = new Intent(this, HomeActivity.class);
-//			homeSpec.setContent(homeIntent);
-			
 			// Tab for Home
 			TabSpec homeSpec = tabHost.newTabSpec(getString(R.string.home));
 			// setting Title and Icon for the Tab
