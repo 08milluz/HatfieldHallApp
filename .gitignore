@@ -1,5 +1,5 @@
-bin/*
-bin\*
+HatfieldHallApp/bin/*
+HatfieldHallApp\bin\*
 HatfieldHallApp/gen/*
 HatfieldHallApp\gen\*
 HatfieldHallTest/gen/*
