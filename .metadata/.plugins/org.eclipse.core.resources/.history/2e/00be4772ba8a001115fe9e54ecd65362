@@ -1,0 +1,121 @@
+package android.mobile.HatfieldHall;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.text.InputType;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+public class SeatActivity extends Activity {
+	   private final int DURATION = 8;
+       private final int DISTANCE = 4;
+       private final int WEIGHT = 2;
+       private final int REPS = 1;
+       private Spinner choice;
+       private Button recNewExButton;
+       private TextView tDuration;
+       private TextView mins;
+       private TextView secs;
+       private TextView tDistance;
+       private TextView distance;
+       private TextView tWeight;
+       private TextView weight;
+       private TextView tReps;
+       private TextView reps;
+
+   
+
+       private ArrayList<Integer> flags;
+       private ArrayList<Integer> actID;
+new
+       public void onCreate(Bundle savedInstanceState) {
+                       super.onCreate(savedInstanceState);
+                       
+                       setContentView(R.layout.seat);
+
+                      
+                       
+                      
+                     
+                       mins = (TextView) findViewById(R.id.textView1);
+                       mins.setInputType(InputType.TYPE_CLASS_NUMBER);
+                       mins.setHint("minutes");
+                       mins.setVisibility(View.GONE);
+                       secs = (TextView) findViewById(R.id.textView1);
+                       secs.setInputType(InputType.TYPE_CLASS_NUMBER);
+                       secs.setHint("seconds");
+                       secs.setVisibility(View.GONE);
+                    
+                       recNewExButton = (Button) findViewById(R.id.textView1);
+
+                       ArrayList<String> rows = new ArrayList<String>();
+                       
+                       ArrayList<String> rowStrings = new ArrayList<String>();
+                       flags = new ArrayList<Integer>();
+                       actID = new ArrayList<Integer>();
+
+                       for (int i = 0; i < rows.size(); i++) {
+                                       rowStrings.add(rows.get(i).name);
+                                       flags.add(rows.get(i).flags);
+                                       actID.add(rows.get(i).id);
+                       }
+                       ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(
+                                                       this, android.R.layout.simple_spinner_dropdown_item, rowStrings);
+                       choice.setAdapter(spinnerArrayAdapter);
+
+                       choice.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+                                       public void onItemSelected(AdapterView<?> arg0, View arg1,
+                                                                       int activity, long arg3) {
+                                                       tDuration.setVisibility(View.GONE);
+                                                       tDistance.setVisibility(View.GONE);
+                                                       tWeight.setVisibility(View.GONE);
+                                                       tReps.setVisibility(View.GONE);
+                                                       mins.setVisibility(View.GONE);
+                                                       secs.setVisibility(View.GONE);
+                                                       distance.setVisibility(View.GONE);
+                                                       weight.setVisibility(View.GONE);
+                                                       tReps.setVisibility(View.GONE);
+
+                                                       weight = (TextView) findViewById(R.id.tExWeight);
+                                                       reps.setVisibility(View.GONE);
+                                                       int f = flags.get(activity);
+                                                       if ((f & DURATION) != 0) {
+                                                                       mins.setVisibility(View.VISIBLE);
+                                                                       secs.setVisibility(View.VISIBLE);
+                                                                       tDuration.setVisibility(View.VISIBLE);
+                                                       }
+                                                       if ((f & DISTANCE) != 0) {
+                                                                       distance.setVisibility(View.VISIBLE);
+                                                                       tDistance.setVisibility(View.VISIBLE);
+
+                                                       }
+                                                       if ((f & WEIGHT) != 0) {
+                                                                       weight.setVisibility(View.VISIBLE);
+                                                                       tWeight.setVisibility(View.VISIBLE);
+
+                                                       }
+                                                       if ((f & REPS) != 0) {
+                                                                       reps.setVisibility(View.VISIBLE);
+                                                                       tReps.setVisibility(View.VISIBLE);
+                                                       }
+
+                                       }
+
+                                       public void onNothingSelected(AdapterView<?> arg0) {
+                                                       // TODO Auto-generated method stub
+
+                                       }
+
+                       });
+	
+
+
+}

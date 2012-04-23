@@ -1,0 +1,8 @@
+package com.example.helloandroid.test;
+
+import android.test.ActivityInstrumentationTestCase2;
+
+public class HelloAndroidTest extends
+		ActivityInstrumentationTestCase2<HelloAndroid> {
+
+}
