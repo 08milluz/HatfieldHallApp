@@ -1,3 +1,7 @@
 bin/*
 bin\*
+HatfieldHallApp/gen/*
+HatfieldHallApp\gen\*
+HatfieldHallTest/gen/*
+HatfieldHallTest\gen\*
 .metadata
