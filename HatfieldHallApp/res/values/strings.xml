@@ -5,6 +5,7 @@
     <string name="find_seat">Find Seat</string>
     <string name="home">Home</string>
     <string name="venue">Venue</string>
+
     <string name="info">info</string>
     <string name="address">Address:</string>
     <string name="hall_address">5500 Wabash Avenue - CM17, Terre Haute, Indiana 47803</string>
@@ -13,7 +14,33 @@
     <string name="hours">Hours:</string>
     <string name="hall_hours">Monday-Friday 10AM-5PM, Saturday 12PM-5PM. Open 2 hours prior to an event. Closed during Rose-Hulman holiday breaks.</string>
     
-    
-    
+    <string name="seat_number">Seat #</string>
+    <string name="search">Search</string>
+    <string-array name="rows">
+		<item>A</item>
+		<item>B</item>
+		<item>C</item>
+		<item>D</item>
+		<item>E</item>
+		<item>F</item>
+		<item>G</item>
+		<item>H</item>
+		<item>I</item>
+		<item>J</item>
+		<item>K</item>
+		<item>K</item>
+		<item>L</item>
+		<item>M</item>
+		<item>N</item>
+		<item>O</item>
+		<item>P</item>
+		<item>Q</item>
+		<item>R</item>
+		<item>BA</item>
+		<item>BB</item>
+		<item>BC</item>
+		<item>BD</item>
+		<item>BE</item>
+	</string-array>
 
 </resources>
