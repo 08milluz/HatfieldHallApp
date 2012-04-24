@@ -5,13 +5,40 @@
      <string name="find_seat">Trouver Seat</string>
      <string name="venue">Lieu</string>
      <string name="info">infos:</string>
-    <string name="address"> Adresse:</string>
+    <string name="address">Adresse:</string>
     <string name="hall_address">5500 Wabash Avenue - CM17, Terre Haute, Indiana 47803</string>
     <string name="phone">Téléphone:</string>
     <string name="hall_phone">8128778544</string>
-    <string name="hours">Heures :</string>
+    <string name="hours">Heures:</string>
     <string name="hall_hours">du lundi au vendredi 10 heures-17 heures, le samedi 12 heures-17 heures. Ouvrez 2 heures avant un événement. Fermé pendant les périodes de vacances Rose-Hulman.</string>
-    
+     <string name="seat_number">numéro du siège</string>
+    <string name="search">Rechercher</string>
+    <string-array name="rows">
+		<item>A</item>
+		<item>B</item>
+		<item>C</item>
+		<item>D</item>
+		<item>E</item>
+		<item>F</item>
+		<item>G</item>
+		<item>H</item>
+		<item>I</item>
+		<item>J</item>
+		<item>K</item>
+		<item>K</item>
+		<item>L</item>
+		<item>M</item>
+		<item>N</item>
+		<item>O</item>
+		<item>P</item>
+		<item>Q</item>
+		<item>R</item>
+		<item>BA</item>
+		<item>BB</item>
+		<item>BC</item>
+		<item>BD</item>
+		<item>BE</item>
+	</string-array>
     
     
 </resources> 
