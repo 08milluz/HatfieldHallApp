@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
     <LinearLayout
@@ -31,41 +31,47 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1" />
-
+
                 <EditText
-                    android:id="@+id/eSeatNumber"
-                    android:layout_width="75dp"
+                    android:id="@+id/seat_num"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:ems="10"
                     android:hint="@string/seat_number"
                     android:inputType="number" />
-
+
                 <Button
-                    android:id="@+id/bSearch"
+                    android:id="@+id/seatSearch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/search" />
 
             </TableRow>
-
+
             <TableRow
                 android:id="@+id/tableRow2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
+                android:layout_width="50dp"
+                android:layout_height="fill_parent" >
+
                 <ImageView
-                    android:id="@+id/imageView1"
+                    android:id="@+id/floorMap"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/floor_map" />
 
             </TableRow>
+
+            <ZoomControls
+                android:id="@+id/zoomControls1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right" />
            
         </TableLayout>
 
     </LinearLayout>
     
 
-</ScrollView>
+</RelativeLayout>
