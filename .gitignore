@@ -4,4 +4,6 @@ HatfieldHallApp/gen/*
 HatfieldHallApp\gen\*
 HatfieldHallTest/gen/*
 HatfieldHallTest\gen\*
+HatfieldHallTest/bin/*
+HatfieldHallTest\bin\*
 .metadata
