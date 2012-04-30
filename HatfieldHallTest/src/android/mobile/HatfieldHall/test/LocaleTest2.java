@@ -2,7 +2,7 @@ package android.mobile.HatfieldHall.test;
 
 import java.util.Locale;
 
-import org.junit.Test;
+
 
 import android.app.Activity;
 import android.content.res.Configuration;
@@ -10,18 +10,19 @@ import android.mobile.HatfieldHall.HatfieldHallActivity;
 import android.mobile.HatfieldHall.R;
 import android.test.ActivityInstrumentationTestCase2;
 
-public class LocaleTest extends ActivityInstrumentationTestCase2 {
-
+public class LocaleTest2 extends
+		ActivityInstrumentationTestCase2<HatfieldHallActivity> {
 	private Activity mActivity; // VenueActivity is under test
+	private Locale locale2;
 
-	@SuppressWarnings("unchecked")
-	public LocaleTest() {
+	public LocaleTest2() {
 		super("android.mobile.HatfieldHall", HatfieldHallActivity.class);
 
-	}
 
+	}
+	
 	public void frenchLocaleSetUp() {
-		Locale locale2 = new Locale("fr");
+		locale2 = new Locale("fr");
 		Locale.setDefault(locale2);
 		Configuration config2 = new Configuration();
 		config2.locale = locale2;
@@ -35,90 +36,90 @@ public class LocaleTest extends ActivityInstrumentationTestCase2 {
 								.getDisplayMetrics());
 	}
 
-	@Test
-	public void testFrenchAppName() {
 
+	public void testFrenchAppName() {
+		frenchLocaleSetUp();
 		assertEquals("Hatfield salle", mActivity.getString(R.string.app_name));
 	}
 
-	@Test
-	public void testFrenchHome() {
 
+	public void testFrenchHome() {
+		frenchLocaleSetUp();
 		assertEquals("Accueil", mActivity.getString(R.string.home));
 	}
 
-	@Test
-	public void testFrenchFindSeat() {
 
+	public void testFrenchFindSeat() {
+		frenchLocaleSetUp();
 		assertEquals("Trouver Seat", mActivity.getString(R.string.find_seat));
 	}
 
-	@Test
+	
 	public void testFrenchVenue() {
-
+		frenchLocaleSetUp();
 		assertEquals("Lieu", mActivity.getString(R.string.venue));
 	}
 
-	@Test
+	
 	public void testFrenchInfo() {
-
+		frenchLocaleSetUp();
 		assertEquals("infos:", mActivity.getString(R.string.info));
 	}
 
-	@Test
+	
 	public void testFrenchAddress() {
-
+		frenchLocaleSetUp();
 		assertEquals("Adresse:", mActivity.getString(R.string.address));
 	}
 
-	@Test
+	
 	public void testFrenchHallAddress() {
-
+		frenchLocaleSetUp();
 		assertEquals("5500 Wabash Avenue - CM17, Terre Haute, Indiana 47803",
 				mActivity.getString(R.string.hall_address));
 	}
 
-	@Test
+	
 	public void testFrenchPhone() {
-
-		assertEquals("Téléphone:", mActivity.getString(R.string.phone));
+		frenchLocaleSetUp();
+		assertEquals("Téléphone", mActivity.getString(R.string.phone));
 	}
 
-	@Test
+	
 	public void testFrenchHallPhone() {
-
+		frenchLocaleSetUp();
 		assertEquals("8128778544", mActivity.getString(R.string.hall_phone));
 	}
 
-	@Test
+	
 	public void testFrenchHours() {
-
+		frenchLocaleSetUp();
 		assertEquals("Heures:", mActivity.getString(R.string.hours));
 	}
 
-	@Test
+	
 	public void testFrenchHallHours() {
-
+		frenchLocaleSetUp();
 		assertEquals(
 				"du lundi au vendredi 10 heures-17 heures, le samedi 12 heures-17 heures. Ouvrez 2 heures avant un événement. Fermé pendant les périodes de vacances Rose-Hulman.",
 				mActivity.getString(R.string.hall_hours));
 	}
 
-	@Test
+	
 	public void testFrenchSeatNumber() {
-
-		assertEquals("numéro du siège",
+		frenchLocaleSetUp();
+		assertEquals("Siège #",
 				mActivity.getString(R.string.seat_number));
 	}
 
-	@Test
+	
 	public void testFrenchSearch() {
-
+		frenchLocaleSetUp();
 		assertEquals("Rechercher", mActivity.getString(R.string.search));
 	}
 
 	public void japaneseLocaleSetUp() {
-		Locale locale2 = new Locale("jp");
+		locale2 = new Locale("jp");
 		Locale.setDefault(locale2);
 		Configuration config2 = new Configuration();
 		config2.locale = locale2;
@@ -132,86 +133,87 @@ public class LocaleTest extends ActivityInstrumentationTestCase2 {
 								.getDisplayMetrics());
 	}
 
-	@Test
+	
 	public void testJapaneseAppName() {
-
-		assertEquals("ハットフィールドホール", mActivity.getString(R.string.app_name));
+		japaneseLocaleSetUp();
+		assertEquals("ãƒ�ãƒƒãƒˆãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ãƒ›ãƒ¼ãƒ«", mActivity.getString(R.string.app_name));
 	}
 
-	@Test
+	
 	public void testJapaneseHome() {
-
-		assertEquals("ホーム", mActivity.getString(R.string.home));
+		japaneseLocaleSetUp();
+		assertEquals("ãƒ›ãƒ¼ãƒ ", mActivity.getString(R.string.home));
 	}
 
-	@Test
+	
 	public void testJapaneseFindSeat() {
-
-		assertEquals("はシート", mActivity.getString(R.string.find_seat));
+		japaneseLocaleSetUp();
+		assertEquals("ã�¯ã‚·ãƒ¼ãƒˆ", mActivity.getString(R.string.find_seat));
 	}
 
-	@Test
+	
 	public void testJapaneseVenue() {
-
-		assertEquals("会場", mActivity.getString(R.string.venue));
+		japaneseLocaleSetUp();
+		assertEquals("ä¼šå ´", mActivity.getString(R.string.venue));
 	}
 
-	@Test
+	
 	public void testJapaneseInfo() {
-
-		assertEquals("情報", mActivity.getString(R.string.info));
+		japaneseLocaleSetUp();
+		assertEquals("æƒ…å ±", mActivity.getString(R.string.info));
 	}
 
-	@Test
+	
 	public void testJapaneseAddress() {
-
-		assertEquals("情報", mActivity.getString(R.string.address));
+		japaneseLocaleSetUp();
+		assertEquals("ã‚¢ãƒ‰ãƒ¬ã‚¹:", mActivity.getString(R.string.address));
 	}
 
-	@Test
+	
 	public void testJapaneseHallAddress() {
-
-		assertEquals("5500ウォバシュアベニュー - CM17、テレホート、インディアナ州47803",
+		japaneseLocaleSetUp();
+		assertEquals("5500ã‚¦ã‚©ãƒ�ã‚·ãƒ¥ã‚¢ãƒ™ãƒ‹ãƒ¥ãƒ¼ - CM17ã€�ãƒ†ãƒ¬ãƒ›ãƒ¼ãƒˆã€�ã‚¤ãƒ³ãƒ‡ã‚£ã‚¢ãƒŠå·ž47803",
 				mActivity.getString(R.string.hall_address));
 	}
 
-	@Test
+	
 	public void testJapanesePhone() {
-
-		assertEquals("電話番号:", mActivity.getString(R.string.phone));
+		japaneseLocaleSetUp();
+		assertEquals("é›»è©±ç•ªå�·:", mActivity.getString(R.string.phone));
 	}
 
-	@Test
+	
 	public void testJapaneseHallPhone() {
-
+		japaneseLocaleSetUp();
 		assertEquals("8128778544", mActivity.getString(R.string.hall_phone));
 	}
 
-	@Test
+	
 	public void testJapaneseHours() {
-
-		assertEquals("時間:", mActivity.getString(R.string.hours));
+		japaneseLocaleSetUp();
+		assertEquals("æ™‚é–“:", mActivity.getString(R.string.hours));
 	}
 
-	@Test
+	
 	public void testJapaneseHallHours() {
-
+		japaneseLocaleSetUp();
 		assertEquals(
-				"月曜日〜金曜日午前10時 - 午後5時、土曜日午後12時 - 午後5時。イベント前に2時間を開きます。ローズハルマン休日の休憩中に閉じた。",
+				"æœˆæ›œæ—¥ã€œé‡‘æ›œæ—¥å�ˆå‰�10æ™‚ - å�ˆå¾Œ5æ™‚ã€�åœŸæ›œæ—¥å�ˆå¾Œ12æ™‚ - å�ˆå¾Œ5æ™‚ã€‚ã‚¤ãƒ™ãƒ³ãƒˆå‰�ã�«2æ™‚é–“ã‚’é–‹ã��ã�¾ã�™ã€‚ãƒ­ãƒ¼ã‚ºãƒ�ãƒ«ãƒžãƒ³ä¼‘æ—¥ã�®ä¼‘æ†©ä¸­ã�«é–‰ã�˜ã�Ÿã€‚",
 				mActivity.getString(R.string.hall_hours));
 	}
 	
-	@Test
+	
 	public void testJapaneseSeatNumber() {
-
-		assertEquals("座席番号",
+		japaneseLocaleSetUp();
+		assertEquals("åº§å¸­ç•ªå�·",
 				mActivity.getString(R.string.seat_number));
 	}
 
-	@Test
+	
 	public void testJapaneseSearch() {
-
-		assertEquals("検索", mActivity.getString(R.string.search));
+		japaneseLocaleSetUp();
+		assertEquals("æ¤œç´¢", mActivity.getString(R.string.search));
 	}
+
 
 }
