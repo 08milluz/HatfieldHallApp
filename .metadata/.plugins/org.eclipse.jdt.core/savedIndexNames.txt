@@ -1,6 +1,0 @@
-INDEX VERSION 1.126+C:\Users\drakecb\Documents\Courses\CSSE 376\Hatfield Hall App\.metadata\.plugins\org.eclipse.jdt.core
-1614157572.index
-1394865946.index
-519386873.index
-1342126069.index
-3631691368.index
