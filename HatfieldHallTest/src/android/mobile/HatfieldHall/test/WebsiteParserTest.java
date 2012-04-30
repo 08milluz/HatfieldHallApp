@@ -6,11 +6,32 @@ package android.mobile.HatfieldHall.test;
 
 import java.util.ArrayList;
 import java.util.Locale;
-
+import junit.framework.TestCase;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.test.ActivityInstrumentationTestCase2;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import org.xmlpull.v1.XmlSerializer;
 
-public class WebsiteParserTest {
+import android.mobile.HatfieldHall.WebsiteParser;
 
+
+
+
+public class WebsiteParserTest  {
+	private WebsiteParser parser;
+	
+	public WebsiteParserTest()
+	{
+		//Constructor does nothing	
+	}
+	
+	
+
+	
+	
+	
+	
 }
