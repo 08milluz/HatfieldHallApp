@@ -4,7 +4,7 @@
     android:layout_height="fill_parent" >
 
     <LinearLayout
-        android:id="@+id/linearLayout1"
+        android:id="@+id/main_venue_layout"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical" >
