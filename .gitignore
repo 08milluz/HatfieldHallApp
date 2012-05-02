@@ -4,4 +4,35 @@ HatfieldHallApp/gen/*
 HatfieldHallApp\gen\*
 HatfieldHallTest/gen/*
 HatfieldHallTest\gen\*
+<<<<<<< HEAD
+*.pydevproject
+.project
 .metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+=======
+HatfieldHallTest/bin/*
+HatfieldHallTest\bin\*
+.metadata
+>>>>>>> milluzaj

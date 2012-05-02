@@ -82,7 +82,7 @@ public class LocaleTest2 extends
 	
 	public void testFrenchPhone() {
 		frenchLocaleSetUp();
-		assertEquals("Téléphone:", mActivity.getString(R.string.phone));
+		assertEquals("Téléphone", mActivity.getString(R.string.phone));
 	}
 
 	
@@ -108,7 +108,7 @@ public class LocaleTest2 extends
 	
 	public void testFrenchSeatNumber() {
 		frenchLocaleSetUp();
-		assertEquals("numéro du siège",
+		assertEquals("Siège #",
 				mActivity.getString(R.string.seat_number));
 	}
 
@@ -136,50 +136,50 @@ public class LocaleTest2 extends
 	
 	public void testJapaneseAppName() {
 		japaneseLocaleSetUp();
-		assertEquals("ハットフィールドホール", mActivity.getString(R.string.app_name));
+		assertEquals("ãƒ�ãƒƒãƒˆãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ãƒ›ãƒ¼ãƒ«", mActivity.getString(R.string.app_name));
 	}
 
 	
 	public void testJapaneseHome() {
 		japaneseLocaleSetUp();
-		assertEquals("ホーム", mActivity.getString(R.string.home));
+		assertEquals("ãƒ›ãƒ¼ãƒ ", mActivity.getString(R.string.home));
 	}
 
 	
 	public void testJapaneseFindSeat() {
 		japaneseLocaleSetUp();
-		assertEquals("はシート", mActivity.getString(R.string.find_seat));
+		assertEquals("ã�¯ã‚·ãƒ¼ãƒˆ", mActivity.getString(R.string.find_seat));
 	}
 
 	
 	public void testJapaneseVenue() {
 		japaneseLocaleSetUp();
-		assertEquals("会場", mActivity.getString(R.string.venue));
+		assertEquals("ä¼šå ´", mActivity.getString(R.string.venue));
 	}
 
 	
 	public void testJapaneseInfo() {
 		japaneseLocaleSetUp();
-		assertEquals("情報", mActivity.getString(R.string.info));
+		assertEquals("æƒ…å ±", mActivity.getString(R.string.info));
 	}
 
 	
 	public void testJapaneseAddress() {
 		japaneseLocaleSetUp();
-		assertEquals("アドレス:", mActivity.getString(R.string.address));
+		assertEquals("ã‚¢ãƒ‰ãƒ¬ã‚¹:", mActivity.getString(R.string.address));
 	}
 
 	
 	public void testJapaneseHallAddress() {
 		japaneseLocaleSetUp();
-		assertEquals("5500ウォバシュアベニュー - CM17、テレホート、インディアナ州47803",
+		assertEquals("5500ã‚¦ã‚©ãƒ�ã‚·ãƒ¥ã‚¢ãƒ™ãƒ‹ãƒ¥ãƒ¼ - CM17ã€�ãƒ†ãƒ¬ãƒ›ãƒ¼ãƒˆã€�ã‚¤ãƒ³ãƒ‡ã‚£ã‚¢ãƒŠå·ž47803",
 				mActivity.getString(R.string.hall_address));
 	}
 
 	
 	public void testJapanesePhone() {
 		japaneseLocaleSetUp();
-		assertEquals("電話番号:", mActivity.getString(R.string.phone));
+		assertEquals("é›»è©±ç•ªå�·:", mActivity.getString(R.string.phone));
 	}
 
 	
@@ -191,28 +191,28 @@ public class LocaleTest2 extends
 	
 	public void testJapaneseHours() {
 		japaneseLocaleSetUp();
-		assertEquals("時間:", mActivity.getString(R.string.hours));
+		assertEquals("æ™‚é–“:", mActivity.getString(R.string.hours));
 	}
 
 	
 	public void testJapaneseHallHours() {
 		japaneseLocaleSetUp();
 		assertEquals(
-				"月曜日〜金曜日午前10時 - 午後5時、土曜日午後12時 - 午後5時。イベント前に2時間を開きます。ローズハルマン休日の休憩中に閉じた。",
+				"æœˆæ›œæ—¥ã€œé‡‘æ›œæ—¥å�ˆå‰�10æ™‚ - å�ˆå¾Œ5æ™‚ã€�åœŸæ›œæ—¥å�ˆå¾Œ12æ™‚ - å�ˆå¾Œ5æ™‚ã€‚ã‚¤ãƒ™ãƒ³ãƒˆå‰�ã�«2æ™‚é–“ã‚’é–‹ã��ã�¾ã�™ã€‚ãƒ­ãƒ¼ã‚ºãƒ�ãƒ«ãƒžãƒ³ä¼‘æ—¥ã�®ä¼‘æ†©ä¸­ã�«é–‰ã�˜ã�Ÿã€‚",
 				mActivity.getString(R.string.hall_hours));
 	}
 	
 	
 	public void testJapaneseSeatNumber() {
 		japaneseLocaleSetUp();
-		assertEquals("座席番号",
+		assertEquals("åº§å¸­ç•ªå�·",
 				mActivity.getString(R.string.seat_number));
 	}
 
 	
 	public void testJapaneseSearch() {
 		japaneseLocaleSetUp();
-		assertEquals("検索", mActivity.getString(R.string.search));
+		assertEquals("æ¤œç´¢", mActivity.getString(R.string.search));
 	}
 
 
