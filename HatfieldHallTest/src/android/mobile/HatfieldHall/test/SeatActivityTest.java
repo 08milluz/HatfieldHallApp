@@ -1,5 +1,11 @@
+/* This class tests the functionality of Seat Activity.java
+ * 
+ */
+
 package android.mobile.HatfieldHall.test;
 
+import android.graphics.Bitmap;
+import android.graphics.Point;
 import android.mobile.HatfieldHall.SeatActivity;
 import android.test.ActivityInstrumentationTestCase2;
 import android.widget.Button;
@@ -32,19 +38,22 @@ public class SeatActivityTest extends ActivityInstrumentationTestCase2<SeatActiv
 	      assertNotNull(seatActivity);
 	    }
 	
-	//TODO: Test that the activity referenced is SeatActivity
+	//TEST:		the activity referenced is SeatActivity
+	//RATING:	
 	public void testCorrectActivityIsReferenced(){
 		assertTrue(seatActivity instanceof SeatActivity);
 	}
 
 	
-	//TODO:	Test that the row spinner widget is created
+	//TEST:		the row spinner widget is created
+	//RATING:	
 	public void testRowSpinnerIsCreated(){
 		assertTrue((seatActivity.getRows() != null) && (seatActivity.getRows() instanceof Spinner));
 	}
 	
 	
-	//TODO:	Test that the seat-number spinner widget is created
+	//TEST:	the seat-number spinner widget is created
+	//RATING:	
 	public void testSeatNumberBoxIsCreated(){
 		assertTrue((seatActivity.getNumBox() != null) && (seatActivity.getNumBox() instanceof EditText));
 		
@@ -53,22 +62,39 @@ public class SeatActivityTest extends ActivityInstrumentationTestCase2<SeatActiv
 	public void testSearchButtonIsCreated(){
 		assertTrue((seatActivity.getSearchButton() != null) && (seatActivity.getSearchButton() instanceof Button));
 	}
-	//TODO: Test that the row spinner keys are correct
 	
+	
+	//TEST: the row spinner keys are correct
+	//RATING:	
 	public void testRowSpinnerKeysGetCorrectValues(){
 	
-		assertEquals(22, seatActivity.rows.getAdapter().getCount());	 
+		assertEquals(22, seatActivity.getRows().getAdapter().getCount());	 
 		}
-	
-	
 
 	
-	//TODO: Test that the floor-map loads
+	//TEST: the floor-map loads
+	//RATING:	
 	public void testFloorMapLoads(){
 		assertTrue((seatActivity.getFloorMap() != null) && (seatActivity.getFloorMap() instanceof ImageView));
 	}
 	
 	
+	//TEST: the seat marker loads
+	//RATING:	
+	public void testSeatMarkerLoads(){
+		assertTrue((seatActivity.getMBitmap() != null) && (seatActivity.getMBitmap() instanceof Bitmap));
+	}
+	
+
+	//TEST:		Seat Identifiers (i.e. A12, C13, etc...) are assigned to their native Point coordinates 
+	//RATING:	
+	public void testMapping(){
+		assertEquals(new Point(0,0), seatActivity.getSeat("This should be (0,0)"));
+		assertEquals(new Point(0,0), seatActivity.getSeat("A0"));
+		assertEquals(new Point(162,651), seatActivity.getSeat("A201"));
+		assertEquals(new Point(259,651), seatActivity.getSeat("A12"));
+		assertEquals(new Point(0,0), seatActivity.getSeat("B2"));
+	}
 	
 
 }

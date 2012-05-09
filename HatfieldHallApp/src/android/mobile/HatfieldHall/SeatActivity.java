@@ -5,12 +5,9 @@ import java.util.HashMap;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
 import android.graphics.Matrix;
-import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.PointF;
-import android.graphics.RectF;
 import android.os.Bundle;
 import android.util.FloatMath;
 import android.util.Log;
@@ -25,30 +22,33 @@ import android.widget.Spinner;
 
 public class SeatActivity extends Activity implements OnTouchListener{
 	private static final String TAG = "Touch" ;
-    // These matrices will be used to move and zoom image
+    // These matrices will be used to move the seat marker
     Matrix matrix = new Matrix();
     Matrix savedMatrix = new Matrix();
+    public String log = "log";
 
     // We can be in one of these 3 states
-    static final int NONE = 0;
-    static final int DRAG = 1;
-    static final int ZOOM = 2;
-    int mode = NONE;
-    PointF start = new PointF();
-    PointF mid = new PointF();
-    float oldDist = 1f;
-    public EditText numBox;
-    public Spinner rows;
+    private static final int NONE = 0;
+    private static final int DRAG = 1;
+    private static final int ZOOM = 2;
+    
+    // If a users seat is incorrect, the seat marker will move to the top left of the floor-map
+    private static final Point NullPoint = new Point(0,0);
+    
+    private int mode = NONE;
+    private PointF start = new PointF();
+    private PointF mid = new PointF();
+    private float oldDist = 1f;
+    private EditText numBox;
+    private Spinner rows;
     private Button searchButton;
     private Bitmap mBitmap;
 	private ImageView floorMap;
 	private int seatNumber;
-	public String seatRow;
-	public String log = "log";
+	private String seatRow;
 	private Point seatCoord;
-	private final Point nullPoint = new Point(0,0);
 	
-//	TODO implement HashMap which which relates seat rows with their available seats.
+
 	private HashMap<String, Point> seat;  
 
 	
@@ -86,10 +86,9 @@ public class SeatActivity extends Activity implements OnTouchListener{
 	                 catch (Exception e) {
 	                	 seatNumber = 0;
 	                 }
-	                 if(seat.containsKey(seatRow+seatNumber))	seatCoord =(seat.get(seatRow+seatNumber));
-	                 else seatCoord=nullPoint;
-	                	
-	                 }
+	                 
+	                 seatCoord = getSeat();
+	             }
 	           
 	         });
 	       
@@ -229,6 +228,12 @@ public class SeatActivity extends Activity implements OnTouchListener{
  	}
  	public String getSeatRow(){
  		return seatRow;
+ 	}
+ 	public Point getSeat(){
+ 		return (seat.containsKey(seatRow+seatNumber)) ?	(seat.get(seatRow+seatNumber)):NullPoint;
+ 	}
+ 	public Point getSeat(String key){
+ 		return (seat.containsKey(key)) ?	(seat.get(key)):NullPoint;
  	}
  	public void seatMappingInit(){
  		seat.put("A0", new Point());
