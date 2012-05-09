@@ -236,6 +236,7 @@ public class SeatActivity extends Activity implements OnTouchListener{
  		return (seat.containsKey(key)) ?	(seat.get(key)):NullPoint;
  	}
  	public void seatMappingInit(){
+ 		//Row A
  		seat.put("A0", new Point());
  		seat.put("A103", new Point(460,651));
  		seat.put("A102", new Point(448,651));
@@ -259,6 +260,84 @@ public class SeatActivity extends Activity implements OnTouchListener{
  		seat.put("A201", new Point(162,651));
  		seat.put("A202", new Point(151,651));
  		seat.put("A203", new Point(139,651));
+ 		
+ 		//Row B
+ 		//NOT COMPLETED!
+ 		seat.put("B0", new Point());
+ 		seat.put("B103", new Point(460,625));
+ 		seat.put("B102", new Point(448,625));
+ 		seat.put("B101", new Point(435,625));
+ 		seat.put("B1", new Point(389,625));
+ 		seat.put("B2", new Point(377,625));
+ 		seat.put("B3", new Point(365,625));
+ 		seat.put("B4", new Point(353,625));
+ 		seat.put("B5", new Point(341,625));
+ 		seat.put("B6", new Point(329,625));
+ 		seat.put("B7", new Point(317,625));
+ 		seat.put("B8", new Point(306,625));
+ 		seat.put("B9", new Point(294,625));
+ 		seat.put("B10", new Point(282,625));
+ 		seat.put("B11", new Point(271,625));
+ 		seat.put("B12", new Point(259,625));
+ 		seat.put("B13", new Point(246,625));
+ 		seat.put("B14", new Point(235,625));
+ 		seat.put("B15", new Point(223,625));
+ 		seat.put("B16", new Point(211,625));
+ 		seat.put("B201", new Point(162,625));
+ 		seat.put("B202", new Point(151,625));
+ 		seat.put("B203", new Point(139,625));
+ 		
+ 		//Row C
+ 		//NOT COMPLETED!
+ 		seat.put("C0", new Point());
+ 		seat.put("C103", new Point(460,598));
+ 		seat.put("C102", new Point(448,598));
+ 		seat.put("C101", new Point(435,598));
+ 		seat.put("C1", new Point(389,598));
+ 		seat.put("C2", new Point(377,598));
+ 		seat.put("C3", new Point(365,598));
+ 		seat.put("C4", new Point(353,598));
+ 		seat.put("C5", new Point(341,598));
+ 		seat.put("C6", new Point(329,598));
+ 		seat.put("C7", new Point(317,598));
+ 		seat.put("C8", new Point(306,598));
+ 		seat.put("C9", new Point(294,598));
+ 		seat.put("C10", new Point(282,598));
+ 		seat.put("C11", new Point(271,598));
+ 		seat.put("C12", new Point(259,598));
+ 		seat.put("C13", new Point(246,598));
+ 		seat.put("C14", new Point(235,598));
+ 		seat.put("C15", new Point(223,598));
+ 		seat.put("C16", new Point(211,598));
+ 		seat.put("C201", new Point(162,598));
+ 		seat.put("C202", new Point(151,598));
+ 		seat.put("C203", new Point(139,598));
+ 		
+ 		//Row D
+ 		//NOT COMPLETED!
+ 		seat.put("D0", new Point());
+ 		seat.put("D103", new Point(460,572));
+ 		seat.put("D102", new Point(448,572));
+ 		seat.put("D101", new Point(435,572));
+ 		seat.put("D1", new Point(389,572));
+ 		seat.put("D2", new Point(377,572));
+ 		seat.put("D3", new Point(365,572));
+ 		seat.put("D4", new Point(353,572));
+ 		seat.put("D5", new Point(341,572));
+ 		seat.put("D6", new Point(329,572));
+ 		seat.put("D7", new Point(317,572));
+ 		seat.put("D8", new Point(306,572));
+ 		seat.put("D9", new Point(294,572));
+ 		seat.put("D10", new Point(282,572));
+ 		seat.put("D11", new Point(271,572));
+ 		seat.put("D12", new Point(259,572));
+ 		seat.put("D13", new Point(246,572));
+ 		seat.put("D14", new Point(235,572));
+ 		seat.put("D15", new Point(223,572));
+ 		seat.put("D16", new Point(211,572));
+ 		seat.put("D201", new Point(162,572));
+ 		seat.put("D202", new Point(151,572));
+ 		seat.put("D203", new Point(139,572));
  	Log.d(log, "done init");	
  	
  	}
