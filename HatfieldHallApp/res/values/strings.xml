@@ -40,5 +40,7 @@
 		<item>BD</item>
 		<item>BE</item>
 	</string-array>
+		<string name="home_title">Hatfield Hall</string>
+		<string name="home_upcoming_shows">Upcoming Shows</string>
 
 </resources>

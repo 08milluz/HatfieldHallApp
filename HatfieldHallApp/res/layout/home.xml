@@ -5,16 +5,44 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
-
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/home_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/home"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_gravity="center"
+            android:text="@string/home_title"
+            android:textAppearance="?android:attr/textAppearanceLarge" android:textSize="30dp" android:layout_marginTop="10dp" android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/home_upcoming_shows"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_upcoming_shows"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <ExpandableListView
+                    android:id="@+id/expandableListView1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+                </ExpandableListView>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
-    
 
 </ScrollView>
