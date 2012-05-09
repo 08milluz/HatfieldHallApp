@@ -8,7 +8,9 @@ import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
 public class HatfieldHallActivity extends TabActivity{
-
+		
+		//COMPLEXITY RATING: 1
+		//CODE QUALITY: 100
 		/** Called when the activity is first created. */
 		@Override
 		public void onCreate(Bundle savedInstanceState) {
