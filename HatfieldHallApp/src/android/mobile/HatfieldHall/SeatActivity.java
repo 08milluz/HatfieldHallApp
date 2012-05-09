@@ -46,6 +46,7 @@ public class SeatActivity extends Activity implements OnTouchListener{
 	public String seatRow;
 	public String log = "log";
 	private Point seatCoord;
+	private final Point nullPoint = new Point(0,0);
 	
 //	TODO implement HashMap which which relates seat rows with their available seats.
 	private HashMap<String, Point> seat;  
@@ -60,10 +61,21 @@ public class SeatActivity extends Activity implements OnTouchListener{
 	       ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.rows, android.R.layout.simple_spinner_item );
 	       adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
 	       rows.setAdapter( adapter );
+	       BitmapFactory.Options options = new BitmapFactory.Options();
+	       options.inDither= false;       
+	       options.inInputShareable=true;
+	       options.inTempStorage=new byte[8*1024];
 
+	       floorMap = (ImageView) findViewById(R.id.floorMap);
+	       mBitmap =BitmapFactory.decodeResource(this.getResources(),R.drawable.seat_marker, options);
+	       floorMap.setImageBitmap(mBitmap);
+	       floorMap.setOnTouchListener(SeatActivity.this);
+	       
+	       floorMap.setScaleType(ImageView.ScaleType.MATRIX);
 	       seat = new HashMap<String, Point>();
 	       seatCoord = new Point();
 	       seatMappingInit();
+	       
 	         searchButton.setOnClickListener(new View.OnClickListener() {
 	             public void onClick(View v) {
 	                 seatRow=rows.getSelectedItem().toString();
@@ -74,25 +86,16 @@ public class SeatActivity extends Activity implements OnTouchListener{
 	                 catch (Exception e) {
 	                	 seatNumber = 0;
 	                 }
-	                 Log.d(log, seat.get(seatRow+seatNumber).toString() + "");
-	                 System.out.println(seat.get(seatRow+seatNumber));
-	                seatCoord =(seat.get(seatRow+seatNumber));
-	             }
+	                 if(seat.containsKey(seatRow+seatNumber))	seatCoord =(seat.get(seatRow+seatNumber));
+	                 else seatCoord=nullPoint;
+	                	
+	                 }
+	           
 	         });
 	       
-	       BitmapFactory.Options options = new BitmapFactory.Options();
-	       options.inDither= false;       
-	       options.inInputShareable=true;
-	       options.inTempStorage=new byte[8*1024];
 
-	       floorMap = (ImageView) findViewById(R.id.floorMap);
-	       mBitmap =BitmapFactory.decodeResource(this.getResources(),R.drawable.floor_map, options);
-	        floorMap.setImageBitmap(mBitmap);
 	        
-	        floorMap.setOnTouchListener(SeatActivity.this);
-	        
-//	        Canvas c = new Canvas(mBitmap);
-//	        c.drawRect(new RectF(seatCoord.x, seatCoord.y, seatCoord.x+9, seatCoord.y+9),new Paint());
+
 	        
 	       
 
@@ -116,7 +119,7 @@ public class SeatActivity extends Activity implements OnTouchListener{
      }
      @Override
      public boolean onTouch(View v, MotionEvent event) {
-         floorMap.setScaleType(ImageView.ScaleType.MATRIX);
+         
          // TODO Auto-generated method stub
          ImageView view = (ImageView) v;
          // Dump touch event to log
@@ -136,20 +139,12 @@ public class SeatActivity extends Activity implements OnTouchListener{
              mode = NONE;
              Log.d(TAG, "mode=NONE" );
              break;
+             
          case MotionEvent.ACTION_MOVE:
-             if (mode == DRAG) {
-                 matrix.set(savedMatrix);
-                 matrix.postTranslate(event.getX() - start.x,
-                         event.getY() - start.y);
-             }  else if (mode == ZOOM) {
-                 float newDist = spacing(event);
-                 Log.d(TAG, "newDist=" + newDist);
-                 if (newDist > 10f) {
-                     matrix.set(savedMatrix);
-                     float scale = newDist / oldDist;
-                     matrix.postScale(scale, scale, mid.x, mid.y);
-                 }
-             }
+        	 matrix.set(savedMatrix);
+        	 Log.d("Size", "Width: "+(float)view.getWidth()*seatCoord.x/606+"\tHeight: "+(float)view.getHeight()*seatCoord.y/720);
+             matrix.setTranslate((float)view.getWidth()*seatCoord.x/606, (float)view.getHeight()*seatCoord.y/720);
+             
              break;
          case MotionEvent.ACTION_POINTER_DOWN:
              oldDist = spacing(event);

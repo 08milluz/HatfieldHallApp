@@ -6,4 +6,5 @@ public class Event {
 	public String imageURL;
 	public String description;
 	public String pricing;
+	public String link;
 }
