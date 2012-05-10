@@ -13,6 +13,7 @@
     <string name="hall_hours">du lundi au vendredi 10 heures-17 heures, le samedi 12 heures-17 heures. Ouvrez 2 heures avant un événement. Fermé pendant les périodes de vacances Rose-Hulman.</string>
      <string name="seat_number">Siège #</string>
     <string name="search">Rechercher</string>
+    <string name="seat_error">OH NON!\n\nIl semble que votre siège est incorrecte.\n\nS\'il vous plaît essayer un autre.</string>
     <string-array name="rows">
 		<item>A</item>
 		<item>B</item>

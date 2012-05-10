@@ -14,12 +14,12 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 
 
-@SuppressWarnings("rawtypes")
+
 public class SeatActivityTest extends ActivityInstrumentationTestCase2<SeatActivity> {
 	private SeatActivity seatActivity;
 	
 	
-	@SuppressWarnings("unchecked")
+	
 	public SeatActivityTest() {
 		super("android.mobile.HatfieldHall",SeatActivity.class);
 	}

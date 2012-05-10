@@ -16,6 +16,9 @@
     
     <string name="seat_number">Seat #</string>
     <string name="search">Search</string>
+    
+    <string name="seat_error">OH NO!\n\nIt seems your seat is incorrect.\n\nPlease try a different one.</string>
+    
     <string-array name="rows">
 		<item>A</item>
 		<item>B</item>

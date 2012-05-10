@@ -13,6 +13,9 @@
     <string name="hall_hours">月曜日〜金曜日午前10時 - 午後5時、土曜日午後12時 - 午後5時。イベント前に2時間を開きます。ローズハルマン休日の休憩中に閉じた。</string>
  <string name="seat_number">座席番号</string>
     <string name="search">検索</string>
+    
+    <string name="seat_error">あーもう！\n\nそれはあなたの席が間違っていると思われる。\n\n別のを試してみてください。</string>
+    
     <string-array name="rows">
 		<item>A</item>
 		<item>B</item>
