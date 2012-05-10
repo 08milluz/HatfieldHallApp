@@ -14,6 +14,7 @@
     <string name="hours">Hours:</string>
     <string name="hall_hours">Monday-Friday 10AM-5PM, Saturday 12PM-5PM. Open 2 hours prior to an event. Closed during Rose-Hulman holiday breaks.</string>
     
+    <string name="no_connection">No connection can be made to the Hatfield Hall website and no local data is found. Please try again later.</string>
     <string name="seat_number">Seat #</string>
     <string name="search">Search</string>
     <string-array name="rows">
