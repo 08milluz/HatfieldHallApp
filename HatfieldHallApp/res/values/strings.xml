@@ -17,6 +17,9 @@
     <string name="no_connection">No connection can be made to the Hatfield Hall website and no local data is found. Please try again later.</string>
     <string name="seat_number">Seat #</string>
     <string name="search">Search</string>
+    
+    <string name="seat_error">OH NO!\n\nIt seems your seat is incorrect.\n\nPlease try a different one.</string>
+    
     <string-array name="rows">
 		<item>A</item>
 		<item>B</item>
@@ -41,5 +44,7 @@
 		<item>BD</item>
 		<item>BE</item>
 	</string-array>
+		<string name="home_title">Hatfield Hall</string>
+		<string name="home_upcoming_shows">Upcoming Shows</string>
 
 </resources>
