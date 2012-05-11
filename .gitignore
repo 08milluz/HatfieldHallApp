@@ -4,7 +4,6 @@ HatfieldHallApp/gen/*
 HatfieldHallApp\gen\*
 HatfieldHallTest/gen/*
 HatfieldHallTest\gen\*
-<<<<<<< HEAD
 *.pydevproject
 .project
 .metadata
@@ -31,8 +30,4 @@ local.properties
 
 # PDT-specific
 .buildpath
-=======
-HatfieldHallTest/bin/*
-HatfieldHallTest\bin\*
-.metadata
->>>>>>> milluzaj
+

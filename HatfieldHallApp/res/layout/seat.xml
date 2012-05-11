@@ -52,14 +52,14 @@
 
             <TableRow
                 android:id="@+id/tableRow2"
-                android:layout_width="50dp"
+                android:layout_width="fill_parent"
                 android:layout_height="fill_parent" >
 
                 <ImageView
                     android:id="@+id/floorMap"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/floor_map" />
+                    android:background="@drawable/floor_map" />
 
             </TableRow>
 

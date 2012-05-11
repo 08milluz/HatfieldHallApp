@@ -2,19 +2,19 @@ package android.mobile.HatfieldHall.test;
 
 import java.util.Locale;
 
-
-
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.mobile.HatfieldHall.HatfieldHallActivity;
 import android.mobile.HatfieldHall.R;
 import android.test.ActivityInstrumentationTestCase2;
+import android.util.Log;
 
 public class LocaleTest2 extends
 		ActivityInstrumentationTestCase2<HatfieldHallActivity> {
 	private Activity mActivity; // VenueActivity is under test
 	private Locale locale2;
-
+	public static int points = 0;
+	public final String testPoints = "testPoints";
 	public LocaleTest2() {
 		super("android.mobile.HatfieldHall", HatfieldHallActivity.class);
 
@@ -40,6 +40,7 @@ public class LocaleTest2 extends
 	public void testFrenchAppName() {
 		frenchLocaleSetUp();
 		assertEquals("Hatfield salle", mActivity.getString(R.string.app_name));
+		points++;
 	}
 
 
@@ -82,7 +83,7 @@ public class LocaleTest2 extends
 	
 	public void testFrenchPhone() {
 		frenchLocaleSetUp();
-		assertEquals("Téléphone", mActivity.getString(R.string.phone));
+		assertEquals("Téléphone:", mActivity.getString(R.string.phone));
 	}
 
 	
@@ -136,50 +137,50 @@ public class LocaleTest2 extends
 	
 	public void testJapaneseAppName() {
 		japaneseLocaleSetUp();
-		assertEquals("ãƒ�ãƒƒãƒˆãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ãƒ›ãƒ¼ãƒ«", mActivity.getString(R.string.app_name));
+		assertEquals("ハットフィールドホール", mActivity.getString(R.string.app_name));
 	}
 
 	
 	public void testJapaneseHome() {
 		japaneseLocaleSetUp();
-		assertEquals("ãƒ›ãƒ¼ãƒ ", mActivity.getString(R.string.home));
+		assertEquals("ホーム", mActivity.getString(R.string.home));
 	}
 
 	
 	public void testJapaneseFindSeat() {
 		japaneseLocaleSetUp();
-		assertEquals("ã�¯ã‚·ãƒ¼ãƒˆ", mActivity.getString(R.string.find_seat));
+		assertEquals("はシート", mActivity.getString(R.string.find_seat));
 	}
 
 	
 	public void testJapaneseVenue() {
 		japaneseLocaleSetUp();
-		assertEquals("ä¼šå ´", mActivity.getString(R.string.venue));
+		assertEquals("会場", mActivity.getString(R.string.venue));
 	}
 
 	
 	public void testJapaneseInfo() {
 		japaneseLocaleSetUp();
-		assertEquals("æƒ…å ±", mActivity.getString(R.string.info));
+		assertEquals("情報", mActivity.getString(R.string.info));
 	}
 
 	
 	public void testJapaneseAddress() {
 		japaneseLocaleSetUp();
-		assertEquals("ã‚¢ãƒ‰ãƒ¬ã‚¹:", mActivity.getString(R.string.address));
+		assertEquals("アドレス:", mActivity.getString(R.string.address));
 	}
 
 	
 	public void testJapaneseHallAddress() {
 		japaneseLocaleSetUp();
-		assertEquals("5500ã‚¦ã‚©ãƒ�ã‚·ãƒ¥ã‚¢ãƒ™ãƒ‹ãƒ¥ãƒ¼ - CM17ã€�ãƒ†ãƒ¬ãƒ›ãƒ¼ãƒˆã€�ã‚¤ãƒ³ãƒ‡ã‚£ã‚¢ãƒŠå·ž47803",
+		assertEquals("5500ウォバシュアベニュー - CM17、テレホート、インディアナ州47803",
 				mActivity.getString(R.string.hall_address));
 	}
 
 	
 	public void testJapanesePhone() {
 		japaneseLocaleSetUp();
-		assertEquals("é›»è©±ç•ªå�·:", mActivity.getString(R.string.phone));
+		assertEquals("電話番号:", mActivity.getString(R.string.phone));
 	}
 
 	
@@ -191,28 +192,33 @@ public class LocaleTest2 extends
 	
 	public void testJapaneseHours() {
 		japaneseLocaleSetUp();
-		assertEquals("æ™‚é–“:", mActivity.getString(R.string.hours));
+		assertEquals("時間:", mActivity.getString(R.string.hours));
 	}
 
 	
 	public void testJapaneseHallHours() {
 		japaneseLocaleSetUp();
 		assertEquals(
-				"æœˆæ›œæ—¥ã€œé‡‘æ›œæ—¥å�ˆå‰�10æ™‚ - å�ˆå¾Œ5æ™‚ã€�åœŸæ›œæ—¥å�ˆå¾Œ12æ™‚ - å�ˆå¾Œ5æ™‚ã€‚ã‚¤ãƒ™ãƒ³ãƒˆå‰�ã�«2æ™‚é–“ã‚’é–‹ã��ã�¾ã�™ã€‚ãƒ­ãƒ¼ã‚ºãƒ�ãƒ«ãƒžãƒ³ä¼‘æ—¥ã�®ä¼‘æ†©ä¸­ã�«é–‰ã�˜ã�Ÿã€‚",
+				"月曜日〜金曜日午前10時 - 午後5時、土曜日午後12時 - 午後5時。イベント前に2時間を開きます。ローズハルマン休日の休憩中に閉じた。",
 				mActivity.getString(R.string.hall_hours));
 	}
 	
 	
 	public void testJapaneseSeatNumber() {
 		japaneseLocaleSetUp();
-		assertEquals("åº§å¸­ç•ªå�·",
+		assertEquals("座席番号",
 				mActivity.getString(R.string.seat_number));
 	}
 
 	
 	public void testJapaneseSearch() {
 		japaneseLocaleSetUp();
-		assertEquals("æ¤œç´¢", mActivity.getString(R.string.search));
+		assertEquals("検索", mActivity.getString(R.string.search));
+	}
+	
+	public void totalPoints() {
+		Log.d(testPoints, points + "");
+		System.out.println(points);
 	}
 
 
