@@ -7,22 +7,22 @@ package android.mobile.HatfieldHall;
 import java.util.HashMap;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
-public class SeatActivity extends Activity implements OnTouchListener{
+public class SeatActivity extends Activity{
 	
     // These matrices will be used to move the seat marker
     Matrix matrix = new Matrix();
@@ -43,7 +43,7 @@ public class SeatActivity extends Activity implements OnTouchListener{
 	
 	private HashMap<String, Point> seat;  
 
-	//COMPLEXITY RATING:	4
+	//COMPLEXITY RATING:	5
 	//CODE QUALITY:			100
 	public void onCreate(Bundle savedInstanceState) {
 	       super.onCreate(savedInstanceState);
@@ -62,8 +62,7 @@ public class SeatActivity extends Activity implements OnTouchListener{
 	       floorMap = (ImageView) findViewById(R.id.floorMap);
 	       mBitmap =BitmapFactory.decodeResource(this.getResources(),R.drawable.seat_marker, options);
 	       floorMap.setImageBitmap(mBitmap);
-	       floorMap.setOnTouchListener(SeatActivity.this);
-	       
+	       	       
 	       floorMap.setScaleType(ImageView.ScaleType.MATRIX);
 	       seat = new HashMap<String, Point>();
 	       seatCoord = new Point();
@@ -81,6 +80,15 @@ public class SeatActivity extends Activity implements OnTouchListener{
 	                 }
 	                 
 	                 seatCoord = getSeat();
+	                 
+	            	 matrix.set(savedMatrix);
+	            	 Log.d("Size", "Width: "+(float)floorMap.getWidth()*seatCoord.x/606+"\tHeight: "+(float)floorMap.getHeight()*seatCoord.y/720);
+	                 matrix.setTranslate((float)floorMap.getWidth()*seatCoord.x/606, (float)floorMap.getHeight()*seatCoord.y/720);
+	                 
+	                 if (seatCoord.equals(NullPoint))	showAlert(getString(R.string.seat_error));	                 
+
+	             // Perform the transformation
+		             floorMap.setImageMatrix(matrix);
 	             }
 	           
 	         });
@@ -88,10 +96,25 @@ public class SeatActivity extends Activity implements OnTouchListener{
 
 	        
 
-	        
-	       
+
 
 	 }
+	
+	//COMPLEXITY RATING:	3
+	//CODE QUALITY:		100
+	private void showAlert(String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(
+                     SeatActivity.this);
+        builder.setMessage(message).setCancelable(true)
+                     .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                   dialog.dismiss();
+                            }
+                     });
+        AlertDialog alert = builder.create();
+        alert.show();
+	}
+
 
 	 
 	 //@Override
@@ -102,33 +125,15 @@ public class SeatActivity extends Activity implements OnTouchListener{
       System.gc();
     }
      
-     //@Override
-     //COMPLEXITY RATING:	5
-     //CODE QUALITY:		90
-     public boolean onTouch(View v, MotionEvent event) {
-         
-         ImageView view = (ImageView) v;
-
-      
-        	 matrix.set(savedMatrix);
-        	 Log.d("Size", "Width: "+(float)view.getWidth()*seatCoord.x/606+"\tHeight: "+(float)view.getHeight()*seatCoord.y/720);
-             matrix.setTranslate((float)view.getWidth()*seatCoord.x/606, (float)view.getHeight()*seatCoord.y/720);
-        
-
-         // Perform the transformation
-         view.setImageMatrix(matrix);
-         return true; // indicate event was handled
-     }
-     
  
      //@Override
      //COMPLEXITY RATING:	1
      //CODE QUALITY:		100
-       public void onPause()
-       {
-         super.onPause();
-         System.gc();
-       }
+	public void onPause()
+	{
+		super.onPause();
+		System.gc();
+	}
        
      //@Override
      //COMPLEXITY RATING:	1
@@ -141,38 +146,38 @@ public class SeatActivity extends Activity implements OnTouchListener{
      
      //@Override
 	 //COMPLEXITY RATING:	1
-	 //CODE QUALITY:		100
-     protected void onDestroy() {
-     super.onDestroy();
-     System.gc();
+	 //CODE QUALITYgg:		100
+	protected void onDestroy() {
+		super.onDestroy();
+		System.gc();
 
-      floorMap.setImageBitmap(null); 
-      mBitmap.recycle();
-     }
+		floorMap.setImageBitmap(null); 
+		mBitmap.recycle();
+	}
      
      //COMPLEXITY RATING:	1
      //CODE QUALITY:		100
-     public EditText getNumBox(){
-    	 return numBox;
-     }
+	public EditText getNumBox(){
+		return numBox;
+	}
      
      //COMPLEXITY RATING:	1
      //CODE QUALITY:		100
-     public Spinner getRows(){
-    	 return rows;
-     }
+	public Spinner getRows(){
+		return rows;
+	}
      
      //COMPLEXITY RATING:	1
      //CODE QUALITY:		100
-     public Button getSearchButton(){
-    	 return searchButton;
-     }
+	public Button getSearchButton(){
+		return searchButton;
+	}
      
      //COMPLEXITY RATING:	1
      //CODE QUALITY:		100
-     public Bitmap getMBitmap(){
-    	 return mBitmap;
-     }
+	public Bitmap getMBitmap(){
+		return mBitmap;
+	}
      
     //COMPLEXITY RATING:	1
     //CODE QUALITY:		100
@@ -201,11 +206,12 @@ public class SeatActivity extends Activity implements OnTouchListener{
  	 //COMPLEXITY RATING:	1
  	//CODE QUALITY:		100
  	public Point getSeat(String key){
+ 		
  		return (seat.containsKey(key)) ?	(seat.get(key)):NullPoint;
  	}
  	
  	 //COMPLEXITY RATING:	1
- 	//CODE QUALITY:		90
+ 	//CODE QUALITY:		95
  	public void seatMappingInit(){
  		////MAIN FLOOR////
  		//Row A
