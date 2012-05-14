@@ -37,6 +37,9 @@ public class HomeActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home);
+		String data = getWebsiteData();
+		if(data != null)
+			parseWebsiteData(data);
 		shows = getShows();
 		ShowsListAdapter adapter = new ShowsListAdapter(shows, this);
 		showsList = (ListView) findViewById(R.id.home_shows_list);
