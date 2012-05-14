@@ -1,9 +1,7 @@
 HatfieldHallApp/bin/*
-HatfieldHallApp\bin\*
 HatfieldHallApp/gen/*
-HatfieldHallApp\gen\*
 HatfieldHallTest/gen/*
-HatfieldHallTest\gen\*
+
 *.pydevproject
 .project
 .metadata
