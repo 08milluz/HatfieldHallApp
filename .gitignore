@@ -18,6 +18,10 @@ local.properties
 .classpath
 .settings/
 .loadpath
+*/R.java
+*/bin
+*/BuildConfig.java
+*/lint.xml
 
 # External tool builders
 .externalToolBuilders/
