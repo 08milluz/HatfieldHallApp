@@ -27,15 +27,20 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Xml;
+import android.widget.ListView;
 
 public class HomeActivity extends Activity {
 	private ArrayList<Event> shows = new ArrayList<Event>();;
-	
+	private ListView showsList;
 	
 	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home);
+		shows = getShows();
+		ShowsListAdapter adapter = new ShowsListAdapter(shows, this);
+		showsList = (ListView) findViewById(R.id.home_shows_list);
+		showsList.setAdapter(adapter);
 	}
 	
 

@@ -32,12 +32,13 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
-
-                <ExpandableListView
-                    android:id="@+id/expandableListView1"
+
+                <ListView
+                    android:id="@+id/home_shows_list"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content" >
-                </ExpandableListView>
+
+                </ListView>
 
             </LinearLayout>
 
