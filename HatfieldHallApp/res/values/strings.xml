@@ -46,5 +46,6 @@
 	</string-array>
 		<string name="home_title">Hatfield Hall</string>
 		<string name="home_upcoming_shows">Upcoming Shows</string>
+		<string name="home_buy_tickets_button">Buy Tickets</string>
 
 </resources>

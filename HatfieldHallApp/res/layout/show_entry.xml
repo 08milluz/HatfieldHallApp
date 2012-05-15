@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
@@ -13,25 +13,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_launcher" />
-
+
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:orientation="vertical" android:layout_marginLeft="10dp">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|fill"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/show_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Title"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
+                android:textAppearance="?android:attr/textAppearanceLarge" android:textSize="16dp"/>
+
             <TextView
                 android:id="@+id/show_info"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="Body"
+                android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="14dp"/>
+
+            <Button
+                android:id="@+id/home_buy_tickets_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Body"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:text="@string/home_buy_tickets_button" />
 
         </LinearLayout>
 
