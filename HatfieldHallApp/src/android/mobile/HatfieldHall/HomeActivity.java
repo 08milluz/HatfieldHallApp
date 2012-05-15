@@ -22,8 +22,10 @@ import org.xmlpull.v1.XmlSerializer;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Xml;
@@ -37,7 +39,9 @@ public class HomeActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home);
-		String data = getWebsiteData();
+		//hatfield hall is not connecting (validated on my computer as well)
+		//String data = getWebsiteData();
+		String data = "<li><a href=\"/images/featured/Phantom_480x320.png\" alt=\"3\" link=\"/events/phantomoftheopera/\"></a><div class=\"block\"><h2 style=\"font-size:16px\">RDC: Phantom of the Opera</h2><small>Opens Friday, 4.27.12</small></div></li>";
 		if(data != null)
 			parseWebsiteData(data);
 		shows = getShows();
@@ -331,5 +335,16 @@ public class HomeActivity extends Activity {
 	public void setShows(ArrayList<Event> manualSet)
 	{
 		shows = manualSet;		
+	}
+	
+	/*
+	 * This method starts a new email activity
+	 */
+	public void sendEmail(String show)
+	{
+		Intent email = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:edrocket734@gmail.com"));
+		email.putExtra(Intent.EXTRA_SUBJECT,"Tickets for " + show.toString());
+		email.putExtra(Intent.EXTRA_TEXT,"Hello,\n\nCan I please reserve some tickets for " + show.toString() + ".\n\nThank you!\n\n\n*This email has been sent with the Hatfield Hall ticketing app. This email mail may not conatin enough information to order tickets. Please contact the sender for additional information.");
+		startActivity(email);
 	}
 }

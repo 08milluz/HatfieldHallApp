@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+
 public class ShowsListAdapter extends BaseAdapter{
 	private ArrayList<Event> list;
 	private Context context;
@@ -52,10 +53,10 @@ public class ShowsListAdapter extends BaseAdapter{
 		
 		buyTickets.setOnClickListener(new View.OnClickListener() {
 
-			@Override
+			
 			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				//andy your code goes here.
+				HomeActivity home = (HomeActivity) context;
+				home.sendEmail("test");
 				
 			}});
 		
@@ -69,7 +70,7 @@ public class ShowsListAdapter extends BaseAdapter{
 		return  root.getChildAt(depth[depth.length - 1]);
 	}
 
-	@Override
+	
 	public long getItemId(int i) {
 		return i;
 	}
