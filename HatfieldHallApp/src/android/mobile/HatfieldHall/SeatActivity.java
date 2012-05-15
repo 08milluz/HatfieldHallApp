@@ -8,6 +8,7 @@ import java.util.HashMap;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,6 +17,7 @@ import android.graphics.Point;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,29 +26,34 @@ import android.widget.Spinner;
 
 public class SeatActivity extends Activity{
 	
-    // These matrices will be used to move the seat marker
-    Matrix matrix = new Matrix();
-    Matrix savedMatrix = new Matrix();
+    // These matrices are used to determine where to move the seat marker
+    private Matrix matrix = new Matrix();
+    private Matrix savedMatrix = new Matrix();
 
 
     // If a users seat is incorrect, the seat marker will move to the top left of the floor-map
     private static final Point NullPoint = new Point(0,0);
 
-    private EditText numBox;
-    private Spinner rows;
-    private Button searchButton;
-    private Bitmap mBitmap;
-	private ImageView floorMap;
-	private int seatNumber;
-	private String seatRow;
-	private Point seatCoord;
+    private EditText numBox; 		//Box user inputs seat number
+    private Spinner rows;			//List of Seat rows [A-BE]
+    private Button searchButton;	//Button used to search for the user's seat
+    private Bitmap mBitmap;			//Seat Marker
+	private ImageView floorMap;		//Hatfield Hall Floor Map
+	private int seatNumber;			//Fetched integer value of the user's seat number
+	private String seatRow;			//Fetched string value of the user's seat row 
+	private Point seatCoord;		//Native Point coordinate of user's seat  
 	
-	private HashMap<String, Point> seat;  
+	private HashMap<String, Point> seat;	//Hash-Map of all the seat locations in Hatfield Hall  
 
+	//Initializes the SeatActivity & contains the Seat-Finding algorithm
 	//COMPLEXITY RATING:	5
 	//CODE QUALITY:			100
 	public void onCreate(Bundle savedInstanceState) {
+		
+		//Initializing Seat Finding App and it's components
 	       super.onCreate(savedInstanceState);
+	       
+	       //Setting variables to their counterparts within the SeatActivity Layout  
 	       setContentView(R.layout.seat);
 	       numBox= (EditText) findViewById(R.id.seat_num);
 	       rows = (Spinner) findViewById( R.id.rowSpinner );
@@ -58,36 +65,49 @@ public class SeatActivity extends Activity{
 	       options.inDither= false;       
 	       options.inInputShareable=true;
 	       options.inTempStorage=new byte[8*1024];
-
 	       floorMap = (ImageView) findViewById(R.id.floorMap);
 	       mBitmap =BitmapFactory.decodeResource(this.getResources(),R.drawable.seat_marker, options);
-	       floorMap.setImageBitmap(mBitmap);
+	       
+	       floorMap.setImageBitmap(mBitmap);	//Layers the seat marker on-top of the floor-map
 	       	       
-	       floorMap.setScaleType(ImageView.ScaleType.MATRIX);
+	       floorMap.setScaleType(ImageView.ScaleType.MATRIX);	//Sets the scaling method for drawing to the floor map [i.e. sizing the seat marker correctly]
 	       seat = new HashMap<String, Point>();
 	       seatCoord = new Point();
 	       seatMappingInit();
 	       
+	       //Sets event which occurs when the Search Button is clicked
 	         searchButton.setOnClickListener(new View.OnClickListener() {
 	             public void onClick(View v) {
-	                 seatRow=rows.getSelectedItem().toString();
+	                 seatRow=rows.getSelectedItem().toString();		//Fetches seat row
+	                 
+	                 //Attempts to fetch the integer value of the seat number from the numBox
 	                 try {
 	                	 seatNumber=Integer.parseInt(numBox.getText().toString());
 
 	                 } 
+	                 //If numBox is null or unable to be parsed to an integer, then the seat number is set to zero.
 	                 catch (Exception e) {
 	                	 seatNumber = 0;
 	                 }
 	                 
+	                 //If a seat row & number match an existing seat, that seat's coordinate is fetched;
+	                 //otherwise, the coordinate is set to (0,0) [The top-left corner of the screen.
 	                 seatCoord = getSeat();
 	                 
 	            	 matrix.set(savedMatrix);
-	            	 Log.d("Size", "Width: "+(float)floorMap.getWidth()*seatCoord.x/606+"\tHeight: "+(float)floorMap.getHeight()*seatCoord.y/720);
+	            	 
+	            	 //Scales seat coordinate with respect to the floor map 
 	                 matrix.setTranslate((float)floorMap.getWidth()*seatCoord.x/606, (float)floorMap.getHeight()*seatCoord.y/720);
 	                 
-	                 if (seatCoord.equals(NullPoint))	showAlert(getString(R.string.seat_error));	                 
+	                 //if the queried seat does not exist, an alert is displayed making a suggestion to change the seat values  
+	                 if (seatCoord.equals(NullPoint))	showAlert(getString(R.string.seat_error));
+	                 
+	                 //else upon clicking the search button, the digital keyboard will be minimized
+	                 else{InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+	                 imm.hideSoftInputFromWindow(numBox.getWindowToken(), 0);
+	                 }
 
-	             // Perform the transformation
+	             // Performs the transformation
 		             floorMap.setImageMatrix(matrix);
 	             }
 	           
@@ -100,6 +120,7 @@ public class SeatActivity extends Activity{
 
 	 }
 	
+	//Creates an pop-up alert which displays a message 
 	//COMPLEXITY RATING:	3
 	//CODE QUALITY:		100
 	private void showAlert(String message) {
@@ -191,26 +212,35 @@ public class SeatActivity extends Activity{
  		return seatNumber;
  	}
  	
+ 	
  	//COMPLEXITY RATING:	1
  	//CODE QUALITY:		100
  	public String getSeatRow(){
  		return seatRow;
  	}
  	
- 	 //COMPLEXITY RATING:	1
+ 	
+ 	//If a seat row & number match an existing seat, that seat's coordinate is fetched;
+    //otherwise, the coordinate is set to (0,0) [The top-left corner of the screen.
+ 	//COMPLEXITY RATING:	1
  	//CODE QUALITY:		100
  	public Point getSeat(){
  		return (seat.containsKey(seatRow+seatNumber)) ?	(seat.get(seatRow+seatNumber)):NullPoint;
  	}
  	
- 	 //COMPLEXITY RATING:	1
+ 	
+ 	//Takes-in a string value as opposed to utilizing the global values
+ 	//If a seat row & number match an existing seat, that seat's coordinate is fetched;
+    //otherwise, the coordinate is set to (0,0) [The top-left corner of the screen.
+ 	//**This version of getSeat is primarily used for testing purposes; however, may be used in place of the latter function.
+ 	//COMPLEXITY RATING:	1
  	//CODE QUALITY:		100
  	public Point getSeat(String key){
- 		
  		return (seat.containsKey(key)) ?	(seat.get(key)):NullPoint;
  	}
  	
- 	 //COMPLEXITY RATING:	1
+ 	//initializes native seat locations
+ 	//COMPLEXITY RATING:	1
  	//CODE QUALITY:		95
  	public void seatMappingInit(){
  		////MAIN FLOOR////
@@ -704,7 +734,7 @@ public class SeatActivity extends Activity{
  		
  		
  		
- 		////MAIN FLOOR////
+ 		////BALCONY////
  		//Row BA
  		seat.put("BA1", new Point(471,146));
  		seat.put("BA2", new Point(459,146));
