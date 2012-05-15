@@ -40,8 +40,8 @@ public class HomeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home);
 		//hatfield hall is not connecting (validated on my computer as well)
-		//String data = getWebsiteData();
-		String data = "<li><a href=\"/images/featured/Phantom_480x320.png\" alt=\"3\" link=\"/events/phantomoftheopera/\"></a><div class=\"block\"><h2 style=\"font-size:16px\">RDC: Phantom of the Opera</h2><small>Opens Friday, 4.27.12</small></div></li>";
+		String data = getWebsiteData();
+		//String data = "<li><a href=\"/images/featured/Phantom_480x320.png\" alt=\"3\" link=\"/events/phantomoftheopera/\"></a><div class=\"block\"><h2 style=\"font-size:16px\">RDC: Phantom of the Opera</h2><small>Opens Friday, 4.27.12</small></div></li>";
 		if(data != null)
 			parseWebsiteData(data);
 		shows = getShows();

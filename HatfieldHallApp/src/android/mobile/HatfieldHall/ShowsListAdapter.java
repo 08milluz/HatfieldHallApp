@@ -3,6 +3,7 @@ package android.mobile.HatfieldHall;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,15 +49,18 @@ public class ShowsListAdapter extends BaseAdapter{
 		
 		Button buyTickets = (Button) expand (line, buttonDepth);
 		
+		final String name = this.list.get(position).name;
 		title.setText(this.list.get(position).name);
+		
 		info.setText(this.list.get(position).dates);
 		
 		buyTickets.setOnClickListener(new View.OnClickListener() {
 
 			
 			public void onClick(View arg0) {
+				Log.d("testMail", name);
 				HomeActivity home = (HomeActivity) context;
-				home.sendEmail("test");
+				home.sendEmail(name);
 				
 			}});
 		
@@ -74,4 +78,7 @@ public class ShowsListAdapter extends BaseAdapter{
 	public long getItemId(int i) {
 		return i;
 	}
+	
+	
+	     
 }
