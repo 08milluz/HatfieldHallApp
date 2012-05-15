@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -36,17 +36,28 @@ public class ShowsListAdapter extends BaseAdapter{
 		LinearLayout line = (LinearLayout) inflater.inflate(
 				R.layout.show_entry, null);
 		
-		int [] picDepth = {0 , 0};
 		int [] titleDepth = {0 , 1 , 0};
 		int [] infoDepth = {0 , 1 , 1};
+		int [] picDepth = {0 , 0};
+		int [] buttonDepth = {0 , 1 , 2};
 		
 		//ImageView image = (ImageView) expand(line , picDepth);
 		TextView title = (TextView) expand(line, titleDepth);
 		TextView info = (TextView) expand(line, infoDepth);
 		
+		Button buyTickets = (Button) expand (line, buttonDepth);
 		
 		title.setText(this.list.get(position).name);
 		info.setText(this.list.get(position).dates);
+		
+		buyTickets.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				//andy your code goes here.
+				
+			}});
 		
 		return line;
 	}
