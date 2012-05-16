@@ -56,10 +56,9 @@ public class ShowsListAdapter extends BaseAdapter {
 		title.setText(this.list.get(position).name);
 		info.setText(this.list.get(position).dates);
 		
-		Drawable drawable = LoadImageFromWeb("http://hatfieldhall.com/images/featured/Phantom_480x320.png");
+		Drawable drawable = LoadImageFromWeb(this.list.get(position).imageURL);
 		Bitmap d = ((BitmapDrawable)drawable).getBitmap();
 	    Bitmap bitmapOrig = Bitmap.createScaledBitmap(d, 128, 128, false);
-		Log.d("ali", this.list.get(position).link);
 		image.setImageBitmap(bitmapOrig);
 
 		buyTickets.setOnClickListener(new View.OnClickListener() {
