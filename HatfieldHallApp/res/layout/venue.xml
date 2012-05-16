@@ -39,7 +39,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/hall_address"
-                android:textAppearance="?android:attr/textAppearanceLarge" android:layout_marginLeft="20sp"/>
+                android:textAppearance="?android:attr/textAppearanceLarge" android:layout_marginLeft="20sp"
+                android:autoLink="map"/>
 
         </LinearLayout>
 
@@ -62,13 +63,13 @@
 
 
 
-
             <TextView
                 android:id="@+id/venue_hall_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/hall_phone"
-                android:textAppearance="?android:attr/textAppearanceLarge" android:layout_marginLeft="20sp"/>
+                android:textAppearance="?android:attr/textAppearanceLarge" android:layout_marginLeft="20sp"
+    		    android:autoLink="phone" />
 
         </LinearLayout>
 
