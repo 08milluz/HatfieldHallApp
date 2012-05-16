@@ -63,13 +63,7 @@
 
             </TableRow>
 
-            <ZoomControls
-                android:id="@+id/zoomControls1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="right" />
-           
-        </TableLayout>
+		</TableLayout>
 
     </LinearLayout>
     
