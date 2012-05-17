@@ -39,4 +39,7 @@
 		<item>BD</item>
 		<item>BE</item>
 	</string-array>
+	<string name="home_title">ハットフィールドホール</string>
+	<string name="home_upcoming_shows">今後の番組</string>
+	<string name="home_buy_tickets_button">購入チケット</string>
 </resources>

@@ -32,7 +32,7 @@ public class HatfieldHallActivity extends TabActivity{
 			seatSpec.setIndicator(getString(R.string.find_seat),
 					getResources().getDrawable(R.drawable.icon_search_tab));
 			Intent seatIntent = new Intent(this, SeatActivity.class);
-			seatSpec.setContent(seatIntent);
+			seatSpec.setContent( 	seatIntent);
 
 			// Tab for Venue
 			TabSpec venueSpec = tabHost.newTabSpec(getString(R.string.venue));

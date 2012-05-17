@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Hatfield salle</string>
+	<string name="app_name">Hatfield Salle</string>
      <string name="home">Accueil</string>
      <string name="find_seat">Trouver Seat</string>
      <string name="venue">Lieu</string>
@@ -37,6 +37,8 @@
 		<item>BD</item>
 		<item>BE</item>
 	</string-array>
-    
+    <string name="home_title">Hatfield Salle</string>
+	<string name="home_upcoming_shows">Spectacles à Venir</string>
+	<string name="home_buy_tickets_button">Achat de Billets</string>
     
 </resources> 
