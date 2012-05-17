@@ -39,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/hall_address"
-                android:textAppearance="?android:attr/textAppearanceLarge" android:layout_marginLeft="20sp"
+                android:textAppearance="?android:attr/textAppearanceLarge" android:textSize="16dp" android:layout_marginLeft="20sp" android:layout_marginRight="10sp"
                 android:autoLink="map"/>
 
         </LinearLayout>
@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/hall_phone"
-                android:textAppearance="?android:attr/textAppearanceLarge" android:layout_marginLeft="20sp"
+                android:textAppearance="?android:attr/textAppearanceLarge" android:textSize="16dp" android:layout_marginLeft="20sp" android:layout_marginRight="10sp"
     		    android:autoLink="phone" />
 
         </LinearLayout>
@@ -96,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/hall_hours"
-                android:textAppearance="?android:attr/textAppearanceLarge" android:layout_marginLeft="20sp"/>
+                android:textAppearance="?android:attr/textAppearanceLarge" android:textSize="16dp" android:layout_marginLeft="20sp" android:layout_marginRight="10sp"/>
 
         </LinearLayout>
 

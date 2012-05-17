@@ -6,11 +6,11 @@
     <string name="venue">会場</string>
     <string name="info">情報</string>
     <string name="address">アドレス:</string>
-    <string name="hall_address">5500ウォバシュアベニュー - CM17、テレホート、インディアナ州47803</string>
-    <string name="phone">電話番号:</string>
+    <string name="hall_address">5500 Wabash Avenue - CM17, Terre Haute, Indiana 47803</string>
+    <string name="phone">\n電話番号:</string>
     <string name="hall_phone">8128778544</string>
-    <string name="hours">時間:</string>
-    <string name="hall_hours">月曜日〜金曜日午前10時 - 午後5時、土曜日午後12時 - 午後5時。イベント前に2時間を開きます。ローズハルマン休日の休憩中に閉じた。</string>
+    <string name="hours">\n時間:</string>
+    <string name="hall_hours">月曜日〜金曜日午前10時 - 午後5時、\n土曜日午後12時 - 午後5時。\nイベント前に2時間を開きます。\nローズハルマン休日の休憩中に閉じた。</string>
  <string name="seat_number">座席番号</string>
     <string name="search">検索</string>
     

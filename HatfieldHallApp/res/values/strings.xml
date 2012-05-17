@@ -9,10 +9,10 @@
     <string name="info">info</string>
     <string name="address">Address:</string>
     <string name="hall_address">5500 Wabash Avenue - CM17, Terre Haute, Indiana 47803</string>
-    <string name="phone">Phone:</string>
+    <string name="phone">\nPhone:</string>
     <string name="hall_phone">8128778544</string>
-    <string name="hours">Hours:</string>
-    <string name="hall_hours">Monday-Friday 10AM-5PM, Saturday 12PM-5PM. Open 2 hours prior to an event. Closed during Rose-Hulman holiday breaks.</string>
+    <string name="hours">\nHours:</string>
+    <string name="hall_hours">Monday-Friday 10AM-5PM,\nSaturday 12PM-5PM.\nOpen 2 hours prior to an event.\nClosed during Rose-Hulman holiday breaks.</string>
     
     <string name="no_connection">No connection can be made to the Hatfield Hall website and no local data is found. Please try again later.</string>
     <string name="seat_number">Seat #</string>

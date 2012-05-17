@@ -31,19 +31,19 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1" />
-
+
                 <EditText
                     android:id="@+id/seat_num"
-                    android:layout_width="80dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:ems="10"
                     android:hint="@string/seat_number"
                     android:inputType="number" />
-
+
                 <Button
                     android:id="@+id/seatSearch"
-                    android:layout_width="wrap_content"
+                    android:layout_width="45dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/search" />
