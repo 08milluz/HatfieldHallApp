@@ -512,13 +512,13 @@ public class SeatActivity extends Activity{
  		
  		
  		//Row K
- 		seat.put("K107", new Point(509,408));
- 		seat.put("K106", new Point(497,408));
- 		seat.put("K105", new Point(485,408));
- 		seat.put("K104", new Point(473,408));
- 		seat.put("K103", new Point(509,408));
- 		seat.put("K102", new Point(497,408));
- 		seat.put("K101", new Point(485,408));
+ 		seat.put("K107", new Point(562,408));
+ 		seat.put("K106", new Point(550,408));
+ 		seat.put("K105", new Point(539,408));
+ 		seat.put("K104", new Point(526,408));
+ 		seat.put("K103", new Point(515,408));
+ 		seat.put("K102", new Point(502,408));
+ 		seat.put("K101", new Point(490,408));
  		
  		seat.put("K1", new Point(423,404));
  		seat.put("K1", new Point(411,404));
@@ -553,13 +553,13 @@ public class SeatActivity extends Activity{
  		
  		
  		//Row L
- 		seat.put("L107", new Point(509,381));
- 		seat.put("L106", new Point(497,381));
- 		seat.put("L105", new Point(485,381));
- 		seat.put("L104", new Point(473,381));
- 		seat.put("L103", new Point(509,381));
- 		seat.put("L102", new Point(497,381));
- 		seat.put("L101", new Point(485,381));
+ 		seat.put("L107", new Point(562,381));
+ 		seat.put("L106", new Point(550,381));
+ 		seat.put("L105", new Point(539,381));
+ 		seat.put("L104", new Point(526,381));
+ 		seat.put("L103", new Point(515,381));
+ 		seat.put("L102", new Point(502,381));
+ 		seat.put("L101", new Point(490,381));
  		
  		seat.put("L1", new Point(423,372));
  		seat.put("L1", new Point(411,372));
@@ -594,54 +594,54 @@ public class SeatActivity extends Activity{
  		
  		
  		//Row M
- 		seat.put("M107", new Point(509,348));
- 		seat.put("M106", new Point(497,348));
- 		seat.put("M105", new Point(485,348));
- 		seat.put("M104", new Point(473,348));
- 		seat.put("M103", new Point(509,348));
- 		seat.put("M102", new Point(497,348));
- 		seat.put("M101", new Point(485,348));
+ 		seat.put("M107", new Point(562,348));
+ 		seat.put("M106", new Point(550,348));
+ 		seat.put("M105", new Point(539,348));
+ 		seat.put("M104", new Point(526,348));
+ 		seat.put("M103", new Point(515,348));
+ 		seat.put("M102", new Point(502,348));
+ 		seat.put("M101", new Point(490,348));
  		
- 		seat.put("M1", new Point(423,146));
- 		seat.put("M1", new Point(411,146));
- 		seat.put("M3", new Point(400,146));
- 		seat.put("M4", new Point(389,146));
- 		seat.put("M5", new Point(377,146));
- 		seat.put("M6", new Point(365,146));
- 		seat.put("M7", new Point(353,146));
- 		seat.put("M8", new Point(341,146));
- 		seat.put("M9", new Point(330,146));
- 		seat.put("M10", new Point(318,146));
- 		seat.put("M11", new Point(306,146));
- 		seat.put("M12", new Point(294,146));
- 		seat.put("M13", new Point(282,146));
- 		seat.put("M14", new Point(271,146));
- 		seat.put("M15", new Point(259,146));
- 		seat.put("M16", new Point(246,146));
- 		seat.put("M17", new Point(235,146));
- 		seat.put("M18", new Point(223,146));
- 		seat.put("M19", new Point(211,146));
- 		seat.put("M20", new Point(199,146));
- 		seat.put("M21", new Point(187,146));
- 		seat.put("M22", new Point(175,146));
+ 		seat.put("M1", new Point(423,346));
+ 		seat.put("M1", new Point(411,346));
+ 		seat.put("M3", new Point(400,346));
+ 		seat.put("M4", new Point(389,346));
+ 		seat.put("M5", new Point(377,346));
+ 		seat.put("M6", new Point(365,346));
+ 		seat.put("M7", new Point(353,346));
+ 		seat.put("M8", new Point(341,346));
+ 		seat.put("M9", new Point(330,346));
+ 		seat.put("M10", new Point(318,346));
+ 		seat.put("M11", new Point(306,346));
+ 		seat.put("M12", new Point(294,346));
+ 		seat.put("M13", new Point(282,346));
+ 		seat.put("M14", new Point(271,346));
+ 		seat.put("M15", new Point(259,346));
+ 		seat.put("M16", new Point(246,346));
+ 		seat.put("M17", new Point(235,346));
+ 		seat.put("M18", new Point(223,346));
+ 		seat.put("M19", new Point(211,346));
+ 		seat.put("M20", new Point(199,346));
+ 		seat.put("M21", new Point(187,346));
+ 		seat.put("M22", new Point(175,346));
  		
- 		seat.put("M201", new Point(106,146));
- 		seat.put("M202", new Point(94,146));
- 		seat.put("M203", new Point(82,146));
- 		seat.put("M204", new Point(70,146));
- 		seat.put("M205", new Point(58,146));
- 		seat.put("M206", new Point(46,146));
- 		seat.put("M207", new Point(34,146));
+ 		seat.put("M201", new Point(106,346));
+ 		seat.put("M202", new Point(94,346));
+ 		seat.put("M203", new Point(82,346));
+ 		seat.put("M204", new Point(70,346));
+ 		seat.put("M205", new Point(58,346));
+ 		seat.put("M206", new Point(46,346));
+ 		seat.put("M207", new Point(34,346));
  		
  		
  		//Row N
- 		seat.put("N107", new Point(509,321));
- 		seat.put("N106", new Point(497,321));
- 		seat.put("N105", new Point(485,321));
- 		seat.put("N104", new Point(473,321));
- 		seat.put("N103", new Point(509,321));
- 		seat.put("N102", new Point(497,321));
- 		seat.put("N101", new Point(485,321));
+ 		seat.put("N107", new Point(562,321));
+ 		seat.put("N106", new Point(550,321));
+ 		seat.put("N105", new Point(539,321));
+ 		seat.put("N104", new Point(526,321));
+ 		seat.put("N103", new Point(515,321));
+ 		seat.put("N102", new Point(502,321));
+ 		seat.put("N101", new Point(490,321));
  		
  		seat.put("N1", new Point(377,311));
  		seat.put("N2", new Point(365,311));
@@ -668,17 +668,17 @@ public class SeatActivity extends Activity{
  		
  		
  		//Row O
- 		seat.put("O106", new Point(497,294));
- 		seat.put("O105", new Point(485,294));
- 		seat.put("O104", new Point(473,294));
- 		seat.put("O103", new Point(509,294));
- 		seat.put("O102", new Point(497,294));
- 		seat.put("O101", new Point(485,294));
+ 		seat.put("O106", new Point(551,294));
+ 		seat.put("O105", new Point(540,294));
+ 		seat.put("O104", new Point(528,294));
+ 		seat.put("O103", new Point(516,294));
+ 		seat.put("O102", new Point(504,294));
+ 		seat.put("O101", new Point(492,294));
  		
  		seat.put("O1", new Point(381,285));
  		seat.put("O2", new Point(370,285));
  		seat.put("O3", new Point(358,285));
- 		seat.put("O4", new Point(146,285));
+ 		seat.put("O4", new Point(346,285));
  		seat.put("O5", new Point(334,285));
  		seat.put("O6", new Point(323,285));
  		seat.put("O7", new Point(311,285));
@@ -700,12 +700,12 @@ public class SeatActivity extends Activity{
  		 		
  		
  		//Row P
- 		seat.put("P106", new Point(497,266));
- 		seat.put("P105", new Point(485,266));
- 		seat.put("P104", new Point(473,266));
- 		seat.put("P103", new Point(509,266));
- 		seat.put("P102", new Point(497,266));
- 		seat.put("P101", new Point(485,266));
+ 		seat.put("P106", new Point(551,267));
+ 		seat.put("P105", new Point(540,267));
+ 		seat.put("P104", new Point(528,267));
+ 		seat.put("P103", new Point(516,267));
+ 		seat.put("P102", new Point(504,267));
+ 		seat.put("P101", new Point(492,267));
  		
  		seat.put("P1", new Point(389,259));
  		seat.put("P2", new Point(377,259));
@@ -732,6 +732,20 @@ public class SeatActivity extends Activity{
  		seat.put("P206", new Point(46,264));
  		 		
  		
+ 		//Row R
+ 		seat.put("R105", new Point(540,237));
+ 		seat.put("R104", new Point(528,237));
+ 		seat.put("R103", new Point(516,237));
+ 		seat.put("R102", new Point(504,237));
+ 		seat.put("R101", new Point(492,237));
+ 		
+ 		
+ 		seat.put("R201", new Point(106,235));
+ 		seat.put("R202", new Point(94,235));
+ 		seat.put("R203", new Point(82,235));
+ 		seat.put("R204", new Point(70,235));
+ 		seat.put("R205", new Point(58,235));
+
  		
  		
  		////BALCONY////
